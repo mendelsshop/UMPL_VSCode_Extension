@@ -1,0 +1,25 @@
+{
+    "name": "UMPL",
+    "displayName": "umpl",
+    "description": "language support for UMPL",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.68.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "umpl",
+            "aliases": ["UMPL", "umpl"],
+            "extensions": [".umpl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "umpl",
+            "scopeName": "source.umpl",
+            "path": "./syntaxes/umpl.tmLanguage.json"
+        }]
+    }
+}

@@ -1,0 +1,97 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "UMPL",
+	"patterns": [
+
+		{
+			"include": "#keywords"
+		},
+		{
+			"include": "#operators"
+		},
+		{
+			"include": "#comments"
+		},
+		{
+			"include": "#literals"
+		},
+		{
+			"include": "#expressions"
+		},
+			{
+				"include": "#strings"
+			},
+			{
+				"include": "#numbers"
+			},
+			{
+				"include": "#booleans"
+			},
+			{
+				"null": {
+					"match": "null",
+					"name": "constant.language.null.umpl"
+				}
+			} 
+	],
+	"literals": {
+
+	},
+	"repository": {
+		"keywords": {
+			"patterns": [{
+				"name": "keyword.control.umpl",
+				"match": "\\b(with|potato|new|else|continue|break|if|create|loop|return)\\b"
+			}
+]
+		},
+		"strings": {
+			"name": "string.quoted.double.umpl",
+			"begin": "`",
+			"end": "`"
+
+		},
+		"comments": {
+			"name": "comment.lineComment.umpl",
+			"begin": "!",
+			"end": "\\n"
+
+		},
+		"numbers": {
+			"name": "constant.numeric.umpl",
+			"match": "(?:0x)?[0-9A-F]+"
+		},
+		"booleans": {
+			"patterns": [
+				{
+					"name": "constant.language.boolean.true.umpl",
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))true(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
+				},
+				{
+					"name": "constant.language.boolean.false.umpl",
+					"match": "(?<![_$[:alnum:]])(?:(?<=\\.\\.\\.)|(?<!\\.))false(?![_$[:alnum:]])(?:(?=\\.\\.\\.)|(?!\\.))"
+				}
+			]
+		},
+		"operators": {
+			"name": "keyword.operator.umpl",
+			"match": "(?:plus|minus|multiply|divide|or|and|gt|ne|le|ge|eq|lt|not)"
+		},
+		"expression": {
+			"name" : "meta.expression.umpl",
+			"match": "(?<=\\()(?:(?<=\\.\\.\\.)|(?<!\\.))(?:(?=\\.\\.\\.)|(?!\\.))(?=\\))"
+		}
+	},
+	"scopeName": "source.umpl",
+	"editor.tokenColorCustomizations": {
+        "textMateRules": [
+                {
+                    "scope": "keyword.operator.umpl",
+                    "settings": {
+                        "foreground": "#bcff00" 
+                    }
+                }
+        ]
+    }
+}
+
